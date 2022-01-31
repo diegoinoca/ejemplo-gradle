@@ -30,10 +30,10 @@ pipeline {
             }
             post{
                 success{
-                    slackSend color: 'good', message: "[Diego Inostroza] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-slack'
+                    slackSend color: 'good', message: "[Diego Inostroza] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-jenkins-slack'
                 }
                 failure{
-                    slackSend color: 'danger', message: "[Diego Inostroza] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.TAREA}]", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-slack'
+                    slackSend color: 'danger', message: "[Diego Inostroza] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.TAREA}]", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-jenkins-slack'
                 }
             }
         }
